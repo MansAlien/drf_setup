@@ -39,6 +39,7 @@ This is a boilerplate project for quickly starting a Django REST Framework (DRF)
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
-   cd <project_name>
+   git clone https://github.com/MansAlien/drf_setup.git
+   cd drf_setup 
+   ```
 
