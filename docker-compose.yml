@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    image: mansalien/drf_setup:v0.1
+    image: mansalien/drf_start:v0.2
     build:
       context: ./backend
     ports:
