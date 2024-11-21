@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import dj_database_url
 
 from dotenv import load_dotenv
 
@@ -80,15 +81,21 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': os.getenv('P_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('P_DATABASE'),
-        'USER': os.getenv('P_USER'),
-        'PASSWORD': os.getenv('P_PASSWORD'),
-        'HOST': os.getenv('P_HOST', 'localhost'),
-        'PORT': os.getenv('P_PORT', '5432'),
-    }
+    'default': dj_database_url.config(
+        default='postgres://avnadmin:AVNS_tDk2oX0HFMJLJSVnXYD@pg-1e563e65-mans012033945420-e3a9.e.aivencloud.com:20211/defaultdb?sslmode=require'  # Replace with your database URL
+    )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('P_ENGINE', 'django.db.backends.postgresql'),
+#         'NAME': os.getenv('P_DATABASE'),
+#         'USER': os.getenv('P_USER'),
+#         'PASSWORD': os.getenv('P_PASSWORD'),
+#         'HOST': os.getenv('P_HOST', 'localhost'),
+#         'PORT': os.getenv('P_PORT', '5432'),
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
